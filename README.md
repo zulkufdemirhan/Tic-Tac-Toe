@@ -1,2 +1,7 @@
-# Tic-Tac-Toe
- Tic-Tac-Toe-Game
+# Famous Tic-Tac-Toe Game
+
+⏳ Building With
+
+  - HTML  
+  - CSS  
+  - JavaScript  
