@@ -1,0 +1,38 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board{
+  width: 60vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 16px;
+  background-color: orange;
+  border-radius: 8px;
+}
+
+.board-element{
+  width: 12vh;
+  height: 12vh;
+  margin: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(155, 104, 7);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+#restart{
+  display: none;
+}
