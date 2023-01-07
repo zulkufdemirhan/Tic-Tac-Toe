@@ -33,6 +33,6 @@ body{
   font-weight: bolder;
 }
 
-#restart{
+.restart-btn{
   display: none;
 }

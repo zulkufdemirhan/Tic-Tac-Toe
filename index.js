@@ -33,19 +33,7 @@ const winning_combinations = [
 
 // Essential DOM manipulation
 const elements = document.querySelectorAll(".board-element");
-const restart  = document.querySelector("#restart");
-
-// Restart Button
-restart.addEventListener("click", restartGame );
-function restartGame () {
-  const reset = () => {
-    for (let i = 0; i < setBoard.board.length; i++) {
-      setBoard.board[i] = "";
-    }
-  };
-  window.location.reload();
-  reset();
-}
+const restart  = document.querySelector(".restart-btn");
 
 // Create essential game elements on board and set object array
 elements.forEach((element) => {
@@ -53,7 +41,6 @@ elements.forEach((element) => {
 });
 
 function gameController(e) {
-
   const element = e.target;
   const field   = e.target.dataset.index;
   
@@ -72,4 +59,26 @@ function gameController(e) {
 }
 
 
+// Restart Button
+restart.addEventListener("click", restartGame );
 
+function restartGame () {
+  const reset = () => {
+    for (let i = 0; i < setBoard.board.length; i++) {
+      setBoard.board[i] = "";
+    }
+  };
+  elements.forEach(function(element) {
+    element.textContent = '';
+  });
+  round = 0;
+
+  if (round != 9 ) {
+    restart.style = "display:none";
+  }
+  reset();
+
+  elements.forEach((element) => {
+    element.addEventListener("click", gameController, { once: true });
+  });
+}
