@@ -1,21 +1,25 @@
 *{
   box-sizing: border-box;
+  background-color: #c5c3c6;
+  color: #46494b;
 }
 
 body{
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: Inter,Helvetica;
 }
 
 .board{
-  width: 60vh;
+  width: 53vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 16px;
-  background-color: orange;
+  background-color: #4c5c68;
   border-radius: 8px;
 }
 
@@ -26,13 +30,37 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(155, 104, 7);
+  background-color: #b8d4df;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bolder;
+}
+
+.board-element:hover{
+  background-color: #9ebeca;
 }
 
 .restart-btn{
   display: none;
+  margin: 20px 0px;
+  border-radius: 5px;
+  background-color: #b8d4df;
+  border: 1px solid #5b646a;
+  padding: 9px;
+  font-weight: bolder;
+  width: 7rem;
+  justify-content: center;
+  align-content: center;
+  cursor: pointer;
+  height: 2.5rem;
+  font-size: 16px;
+}
+
+.restart-btn:hover{
+  background-color: #9ebeca;
+}
+
+.notice{
+  margin: 20px 0px;
 }

@@ -13,7 +13,6 @@ const playerX = Player("X");
 const playerO = Player("O");
 let round = 0;
 
-
 const Gameboard = {
   board:["", "", "", "", "", "", "", "", ""] 
 };
