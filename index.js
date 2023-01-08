@@ -60,13 +60,11 @@ function gameController(e) {
 
   for (const combination of winningCombinations) {
     if (combination.every((i) => elements[i].innerText === 'X' )) {
-      console.log('X---KAZANDINN');
-      notice.innerHTML = "X Kazandı"
+      notice.innerHTML = "X Wins"
       restart.style = "display:flex";
       break;
-    }     if (combination.every((i) => elements[i].innerText === 'O' )) {
-      console.log('O---KAZANDINN');
-      notice.innerHTML = "O Kazandı"
+    } if (combination.every((i) => elements[i].innerText === 'O' )) {
+      notice.innerHTML = "O Wins"
       restart.style = "display:flex";
       break;
     }
