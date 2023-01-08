@@ -20,20 +20,10 @@ const Gameboard = {
 
 const setBoard = Gameboard;
 
-const winning_combinations = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [0, 4, 8],
-  [2, 4, 6]
-]
-
 // Essential DOM manipulation
 const elements = document.querySelectorAll(".board-element");
 const restart  = document.querySelector(".restart-btn");
+const notice = document.querySelector(".notice");
 
 // Create essential game elements on board and set object array
 elements.forEach((element) => {
@@ -56,8 +46,33 @@ function gameController(e) {
   if (round === 9 ) {
     restart.style = "display:flex";
   }
-}
 
+  // winning combinations 
+  const  winningCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ]
+
+  for (const combination of winningCombinations) {
+    if (combination.every((i) => elements[i].innerText === 'X' )) {
+      console.log('X---KAZANDINN');
+      notice.innerHTML = "X Kazandı"
+      restart.style = "display:flex";
+      break;
+    }     if (combination.every((i) => elements[i].innerText === 'O' )) {
+      console.log('O---KAZANDINN');
+      notice.innerHTML = "O Kazandı"
+      restart.style = "display:flex";
+      break;
+    }
+  }
+}
 
 // Restart Button
 restart.addEventListener("click", restartGame );
@@ -75,6 +90,7 @@ function restartGame () {
 
   if (round != 9 ) {
     restart.style = "display:none";
+    notice.innerHTML = "Let's one more!"
   }
   reset();
 
